@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>First Laravel Page</title>
-</head>
-<body>
 
-<h1>Welcome to Laravel</h1>
-<p>This is a paragraph.</p>
+@extends('layouts.home')
 
-</body>
-</html>
+@section('title', 'Page Title')
+
+@section('sidebar')
+    @parent
+
+    <p>This is appended to the master sidebar.</p>
+@endsection
+
+@section('content')
+    <p>This is my body content.</p>
+@endsection
+

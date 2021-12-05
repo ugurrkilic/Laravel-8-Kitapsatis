@@ -18,7 +18,17 @@ Route::get('/', function () {
     return view('welcome');
     
 });
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', function () {
+    return view('welcome');
+    
+});
+Route::redirect('/anasayfa', '/home');
+
+Route::get('/home3', function () {
+    return view('home.index');   
+
+});
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
