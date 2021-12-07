@@ -14,22 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/home7', function () {
+    return view('welcome');
+    
+});
 Route::get('/', function () {
-    return view('welcome');
-    
-});
-Route::get('/home', function () {
-    return view('welcome');
-    
-});
-Route::redirect('/anasayfa', '/home');
-
-Route::get('/home3', function () {
     return view('home.index');   
 
 });
-
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
