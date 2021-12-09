@@ -19,9 +19,16 @@ Route::get('/home7', function () {
     
 });
 Route::get('/', function () {
-    return view('home.index');   
+    return view('home.index');    
 
 });
+Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::get('/aboutus', [HomeController::class,'index'])->name('aboutus');
+
+//Admin
+Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('adminhome');
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
