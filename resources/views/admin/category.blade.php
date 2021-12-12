@@ -139,7 +139,8 @@
                           <td>{{ $rs->parent_id}}</td>
                           <td>{{ $rs->title}}</td>
                           <td>{{ $rs->status}}</td>
-                          <td>Edit</td>
+                          
+                          <td><a href="{{route('admin_category_edit',['id'=>$rs->id])}}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>Edit</a></td>
                           <td><a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are You Sure?')"class="btn btn-danger btn-xs">
                           <i class="fa fa-trash-o"></i> Delete</a></td>
                         </tr>
