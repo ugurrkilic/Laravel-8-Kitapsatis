@@ -27,6 +27,8 @@
 
     <!-- Custom Theme Style -->
     <link href="{{asset('assets')}}/admin/build/css/custom.min.css" rel="stylesheet">
+    @yield('css')
+    @yield('javascript')
   </head>
 
   <body class="nav-md">
@@ -34,5 +36,6 @@
   @include('admin._sidebar')
   @yield('content')
   @include('admin._footer')
+  @yield('footer')
   </body>
 </html>
