@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Edit Category')
+@section('title','Add Product')
 
 @section('content')
  <!-- /menu footer buttons -->
@@ -123,7 +123,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Edit Category</h3>
+                <h3>Add Product</h3>
               </div>
 
               <div class="title_right">
@@ -144,7 +144,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Edit Category</h2>
+                    <h2>Add Product</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -169,16 +169,16 @@
                   
                   <div class="x_content">
 
-                    <form class="form-horizontal form-label-left" action="{{route('admin_category_update',['id'=>$data->id])}}" method="post">
+                    <form class="form-horizontal form-label-left" action="{{route('admin_product_store')}}" method="post">
                      @csrf
 
                     <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Parent</label>  
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Parent</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <select class="form-control" name="parent_id">
-                            <option value="0">Main Category</option>
+                        <select class="form-control" name="category_id">
+                            
                             @foreach( $datalist as $rs)
-                            <option value="{{$rs->id}}" @if($rs->id== $data->parent_id) selected="selected" @endif >{{$rs->title}}</option>
+                            <option value="{{ $rs->id}}">{{ $rs->title}}</option>
                             @endforeach
                           </select>
                         </div>
@@ -186,26 +186,44 @@
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" >Title</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="title" value="{{$data->title}}"class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="title" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" >Keywords</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="keywords" value="{{$data->keywords}}" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="keywords" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Description</label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" name="description" value="{{$data->description}}" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="description" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Price</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="number" name="price" value="0" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Quantity</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="number" name="quantity" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Detail</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" name="detail" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" >Status
                         </label>  
                       <div class="col-md-6 col-sm-6 col-xs-12" >
-                          <select class="form-control" value="{{$data->status}}" name="status">
+                          <select class="form-control" name="status">
                             <option>True</option>
                             <option>False</option>
                           </select>
@@ -214,7 +232,7 @@
                       
                       <div class="card-footer">
                         <div class="col-md-6 col-md-offset-3">
-                          <button type="submit" class="btn btn-success">Update Category</button>
+                          <button type="submit" class="btn btn-success">Add Product</button>
                         </div>
                       </div>
                     </form>
