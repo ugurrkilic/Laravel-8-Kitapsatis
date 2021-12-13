@@ -7,6 +7,7 @@ use \App\Models\Product;
 use \App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -51,6 +52,8 @@ class ProductController extends Controller
         $data->price = $request->input('price');
         $data->quantity = $request->input('quantity');
         $data->detail = $request->input('detail');
+        $data->slug = $request->input('slug');
+        $data->image = Storage::putFile('images', $request->file('image'));
         $data->save();
         return redirect()->route('admin_products');
     }
@@ -76,7 +79,7 @@ class ProductController extends Controller
     {
         $data = Product::find($id);
         $datalist = Category::all();
-        return view('admin.product',['data'=>$data, 'datalist'=>$datalist]);
+        return view('admin.product_edit',['data'=>$data, 'datalist'=>$datalist]);
 
     }
 
@@ -99,6 +102,8 @@ class ProductController extends Controller
         $data->price = $request->input('price');
         $data->quantity = $request->input('quantity');
         $data->detail = $request->input('detail');
+        $data->slug = $request->input('slug');
+        $data->image = Storage::putFile('images', $request->file('image'));
         $data->save();
         return redirect()->route('admin_products');
     }
