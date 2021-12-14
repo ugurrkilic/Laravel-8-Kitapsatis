@@ -14,11 +14,9 @@
                 <img src="{{asset('assets')}}/admin/images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
-                <br>
                 @auth
-                <a href="#" class="d-block">{{Auth::user()->name}}</a><br>
-                <a href="{{route('admin_logout') }}" class="d-block">Logout </a>
+                <h2>{{Auth::user()->name}}</h2><br>
+                <a href="{{route('admin_logout') }}" class="d-block"><h2>Logout</h2></a>
                 @endauth
 
               </div>
