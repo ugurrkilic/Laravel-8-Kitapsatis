@@ -129,6 +129,7 @@
                           <th>Quantity</th>
                           <th>Price</th>
                           <th>Image</th>
+                          <th>Image Galery</th>
                           <th>Status</th>
                           <th>Edit</th>
                           <th>Delete</th>
@@ -148,6 +149,8 @@
                                                 <img src="{{ Storage::url($rs->image) }}" height="30" alt="">
                                             @endif
                           </td>
+                          <td><a href="{{route('admin_image_add',['product_id'=> $rs->id])}}" onclick="return !window.open(this.href,'','top=50 width=1100,height=700')">
+                          <img src="{{asset('assets/admin/images')}}/gallery.png" height="30"></a></td>
                           <td>{{ $rs->status}}</td>
                           <td><a href="{{route('admin_product_edit',['id'=>$rs->id])}}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>Edit</a></td>
                           <td><a href="{{route('admin_product_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are You Sure?')"class="btn btn-danger btn-xs">
