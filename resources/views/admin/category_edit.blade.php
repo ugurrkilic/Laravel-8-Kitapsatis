@@ -173,44 +173,45 @@
                      @csrf
 
                     <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Parent</label>  
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Parent</label>  
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                         <select class="form-control" name="parent_id">
                             <option value="0">Main Category</option>
                             @foreach( $datalist as $rs)
-                            <option value="{{$rs->id}}" @if($rs->id== $data->parent_id) selected="selected" @endif >{{$rs->title}}</option>
+                            <option value="{{$rs->id}}" @if($rs->id== $data->parent_id) selected="selected" @endif >
+                            {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}</option>
                             @endforeach
                           </select>
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Title</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12" >Title</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="title" value="{{$data->title}}"class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Keywords</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12" >Keywords</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="keywords" value="{{$data->keywords}}" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Description</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Description</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="description" value="{{$data->description}}" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                           <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Slug</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Slug</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="slug" value="{{$data->slug}}" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" >Status
+                      <label class="control-label col-md-1 col-sm-3 col-xs-12" >Status
                         </label>  
-                      <div class="col-md-6 col-sm-6 col-xs-12" >
+                      <div class="col-md-11 col-sm-6 col-xs-12" >
                           <select class="form-control" value="{{$data->status}}" name="status">
                             <option>True</option>
                             <option>False</option>

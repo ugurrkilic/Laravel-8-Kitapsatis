@@ -170,57 +170,57 @@
                           <input type="hidden" id='id' name="id" value="{{$data->id}}" class="form-control col-md-7 col-xs-12">
                       
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Title</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12" >Title</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="title" value="{{$data->title}}" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>                        
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Keywords</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12" >Keywords</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="keywords" value="{{$data->keywords}}" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Description</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Description</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="description" value="{{$data->description}}" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Company</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Company</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="company" value="{{$data->company}}" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Adrees</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Adrees</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="adrees" value="{{$data->adrees}}" class="form-control col-md-7 col-xs-12">
                         </div>
                         </div>
                                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Phone</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Phone</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="number" name="phone" value="{{$data->phone}}" class="form-control col-md-7 col-xs-12">
                         </div>
                         </div>
                                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Fax</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Fax</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="number" name="fax" value="{{$data->fax}}" class="form-control col-md-7 col-xs-12">
                         </div>
                         </div>
                                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Email</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Email</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="email" value="{{$data->email}}" class="form-control col-md-7 col-xs-12">
                         </div>
                         </div>
                         <div class="item form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" >Status
+                      <label class="control-label col-md-1 col-sm-3 col-xs-12" >Status
                         </label>  
-                      <div class="col-md-6 col-sm-6 col-xs-12" >
+                      <div class="col-md-11 col-sm-6 col-xs-12" >
                           <select class="form-control" name="status" value="{{$data->status}}">
                           
                             <option>True</option>
@@ -231,59 +231,59 @@
                       </div>
                         <div role="tabpanel" class="tab-pane fade" id="smtp_content2" aria-labelledby="profile-tab">
                          <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">SmtpServer</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">SmtpServer</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="smtpserver" value="{{$data->adrees}}" class="form-control col-md-7 col-xs-12">
                         </div>
                         </div>
                                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">SmtpEmail</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">SmtpEmail</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="smtpemail" value="{{$data->smtpemail}}" class="form-control col-md-7 col-xs-12">
                         </div>
                         </div>
                                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">SmtpPassword</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">SmtpPassword</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="password" name="smtppassword" value="{{$data->smtppassword}}" class="form-control col-md-7 col-xs-12">
                         </div>
                         </div>
                                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">SmtpPort</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">SmtpPort</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="smtpport" value="{{$data->smtpport}}" class="form-control col-md-7 col-xs-12">
                         </div>
                         </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="social_content3" aria-labelledby="profile-tab">
                           <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Facebook</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Facebook</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="facebook" value="{{$data->facebook}}" class="form-control col-md-7 col-xs-12">
                         </div>
                         </div>
                                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Instagram</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Instagram</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="instagram" value="{{$data->instagram}}" class="form-control col-md-7 col-xs-12">
                         </div>
                         </div>
                                            <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Twitter</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Twitter</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="twitter" value="{{$data->twitter}}" class="form-control col-md-7 col-xs-12">
                         </div>
                         </div>
                                            <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Youtube</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Youtube</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="youtube" value="{{$data->youtube}}" class="form-control col-md-7 col-xs-12">
                         </div>
                         </div>
                         </div>
                            <div role="tabpanel" class="tab-pane fade" id="about_content3" aria-labelledby="profile-tab">
                                    <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">About Us</label>
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">About Us</label>
                         <div class="col-12 col-sm-12">
                         <textarea class="form-control" id="aboutus" name="aboutus">{{$data->aboutus}}</textarea>
                                             <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
@@ -295,7 +295,7 @@
                         </div>
                            <div role="tabpanel" class="tab-pane fade" id="contact_content3" aria-labelledby="profile-tab">
                                           <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Contact</label>
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Contact</label>
                         <div class="col-12 col-sm-12">
                         <textarea class="form-control" id="contact" name="contact">{{$data->contact}}</textarea>
                                             <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
@@ -307,7 +307,7 @@
                         </div>
                            <div role="tabpanel" class="tab-pane fade" id="references_content3" aria-labelledby="profile-tab">
                           <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">References</label>
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">References</label>
                         <div class="col-12 col-sm-12">
                         <textarea class="form-control" id="references" name="references">{{$data->references}}</textarea>
                                             <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>

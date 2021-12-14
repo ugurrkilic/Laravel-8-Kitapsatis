@@ -173,49 +173,49 @@
                      @csrf
 
                     <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Parent</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Category</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                         <select class="form-control" name="category_id">
                             
                             @foreach( $datalist as $rs)
-                            <option value="{{ $rs->id}}">{{ $rs->title}}</option>
+                            <option value="{{ $rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}</option>
                             @endforeach
                           </select>
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Title</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12" >Title</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="title" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Keywords</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12" >Keywords</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="keywords" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Description</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Description</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="description" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Price</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Price</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="number" name="price" value="0" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Quantity</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Quantity</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="number" name="quantity" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Detail</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Detail</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                         <textarea class="form-control" id="summary-ckeditor" name="detail"></textarea>
                                             <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
                                             <script>
@@ -224,21 +224,21 @@
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Slug</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Slug</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="text" name="slug" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                           <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Image</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Image</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="file" name="image" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" >Status
+                      <label class="control-label col-md-1 col-sm-3 col-xs-12" >Status
                         </label>  
-                      <div class="col-md-6 col-sm-6 col-xs-12" >
+                      <div class="col-md-11 col-sm-6 col-xs-12" >
                           <select class="form-control" name="status">
                             <option>True</option>
                             <option>False</option>
