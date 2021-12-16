@@ -1,3 +1,6 @@
+@php
+    $setting = \App\Http\Controllers\HomeController::getsetting();
+@endphp
 		<!-- Best Sale Area Area -->
 		<!-- Footer Area -->
 		<footer id="wn__footer" class="footer__area bg__cat--8 brown--color">
@@ -7,18 +10,19 @@
 						<div class="col-lg-12">
 							<div class="footer__widget footer__menu">
 								<div class="ft__logo">
-									<a href="index.html">
+									<a href="{{route('home')}}">
 										<img src="{{asset('assets')}}/images/logo/3.png" alt="logo">
 									</a>
 									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered duskam alteration variations of passages</p>
 								</div>
 								<div class="footer__content">
 									<ul class="social__net social__net--2 d-flex justify-content-center">
-										<li><a href="#"><i class="bi bi-facebook"></i></a></li>
-										<li><a href="#"><i class="bi bi-google"></i></a></li>
-										<li><a href="#"><i class="bi bi-twitter"></i></a></li>
+									    @if ($setting->instagram !=null) <li><a href="{{$setting->instagram}}" target="_blank"><i class="bi bi-instagram"></i></a></li> @endif
+										@if ($setting->facebook !=null) <li><a href="{{$setting->facebook}}" target="_blank"><i class="bi bi-facebook"></i></a></li> @endif
+										@if ($setting->twitter !=null) <li><a href="{{$setting->twitter}}" target="_blank"><i class="bi bi-twitter"></i></a></li> @endif
+										@if ($setting->youtube !=null) <li><a href="{{$setting->youtube}}" target="_blank"><i class="bi bi-youtube"></i></a></li> @endif
 										<li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-										<li><a href="#"><i class="bi bi-youtube"></i></a></li>
+										<li><a href="#"><i class="bi bi-google"></i></a></li>
 									</ul>
 									<ul class="mainmenu d-flex justify-content-center">
 										<li><a href="index.html">Trending</a></li>

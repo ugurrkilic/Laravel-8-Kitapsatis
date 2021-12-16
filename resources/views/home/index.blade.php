@@ -1,7 +1,8 @@
 @extends('layouts.home')
-@section('title','laravel e ticaret')
-@section('description')
+              @section('title', $setting->title)
+              @section('description'){{$setting->description}}@endsection
+@section('keywords'){{$setting->keywords}}@endsection
 
-@endsection
+
 
 

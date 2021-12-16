@@ -19,7 +19,7 @@ class CreateSettingsTable extends Migration
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
             $table->string('company',150)->nullable();
-            $table->string('adrees',150)->nullable();
+            $table->string('address',150)->nullable();
             $table->string('phone',20)->nullable();
             $table->string('fax',20)->nullable();
             $table->string('email',75)->default();

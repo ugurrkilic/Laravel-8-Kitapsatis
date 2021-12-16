@@ -1,3 +1,4 @@
+
 <!--[if lte IE 9]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
@@ -10,7 +11,7 @@
 				<div class="row">
 					<div class="col-md-6 col-sm-6 col-6 col-lg-2">
 						<div class="logo">
-							<a href="index.html">
+							<a href="{{route('home')}}">
 								<img src="{{asset('assets')}}/images/logo/logo.png" alt="logo images">
 							</a>
 						</div>
@@ -21,24 +22,7 @@
 					<div class="col-lg-8 d-none d-lg-block">
 						<nav class="mainmenu__nav">
 							<ul class="meninmenu d-flex justify-content-start">
-								<li class="drop with--one--item"><a href="index.html">Home</a></li>
-								<li class="drop"><a href="#">Shop</a>
-									<div class="megamenu mega03">
-										<ul class="item item03">
-											<li class="title">Shop Layout</li>
-											<li><a href="shop-grid.html">Shop Grid</a></li>
-											<li><a href="single-product.html">Single Product</a></li>
-										</ul>
-										<ul class="item item03">
-											<li class="title">Shop Page</li>
-											<li><a href="my-account.html">My Account</a></li>
-										</ul>
-										<ul class="item item03">
-											<li class="title">Bargain Books</li>
-											<li><a href="shop-grid.html">Bargain Bestsellers</a></li>
-										</ul>
-									</div>
-								</li>
+								<li class="drop with--one--item"><a href="{{(route('home'))}}">Home</a></li>
 									<li class="drop"><a href="#">Categories</a>
 									<div class="megamenu dropdown">
 										<ul class="item item01">               
@@ -56,17 +40,9 @@
                                         @endforeach
 									</div>
 								</li>
-								<li class="drop"><a href="shop-grid.html">Kids</a>
-									<div class="megamenu mega02">
-										<ul class="item item02">
-											<li class="title">Top Collections</li>
-										</ul>
-										<ul class="item item02">
-											<li class="title">More For Kids</li>
-										</ul>
-									</div>
+								<li class="drop"><a href="{{(route('aboutus'))}} ">Aboutus</a>
 								</li>
-								<li class="drop"><a href="#">Pages</a>
+								<li class="drop"><a href=""{{(route('aboutus'))}}">References</a>
 									<div class="megamenu dropdown">
 										<ul class="item item01">
 											<li><a href="about.html">About Page</a></li>
@@ -79,7 +55,7 @@
 										</ul>
 									</div>
 								</li>
-								<li class="drop"><a href="blog.html">Blog</a>
+								<li class="drop"><a href="{{(route('aboutus'))}}">Faq</a>
 									<div class="megamenu dropdown">
 										<ul class="item item01">
 											<li><a href="blog.html">Blog Page</a></li>
@@ -87,7 +63,7 @@
 										</ul>
 									</div>
 								</li>
-								<li><a href="contact.html">Contact</a></li>
+								<li><a href="{{(route('aboutus'))}}">Contact</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -172,69 +148,28 @@
 								<!-- End Shopping Cart -->
 							</li>
 							<li class="setting__bar__icon"><a class="setting__active" href="#"></a>
+						
 								<div class="searchbar__content setting__block">
 									<div class="content-inner">
 										<div class="switcher-currency">
 											<strong class="label switcher-label">
-												<span>Currency</span>
-											</strong>
-											<div class="switcher-options">
-												<div class="switcher-currency-trigger">
-													<span class="currency-trigger">USD - US Dollar</span>
-													<ul class="switcher-dropdown">
-														<li>GBP - British Pound Sterling</li>
-														<li>EUR - Euro</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="switcher-currency">
-											<strong class="label switcher-label">
-												<span>Language</span>
-											</strong>
-											<div class="switcher-options">
-												<div class="switcher-currency-trigger">
-													<span class="currency-trigger">English01</span>
-													<ul class="switcher-dropdown">
-														<li>English02</li>
-														<li>English03</li>
-														<li>English04</li>
-														<li>English05</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="switcher-currency">
-											<strong class="label switcher-label">
-												<span>Select Store</span>
-											</strong>
-											<div class="switcher-options">
-												<div class="switcher-currency-trigger">
-													<span class="currency-trigger">Fashion Store</span>
-													<ul class="switcher-dropdown">
-														<li>Furniture</li>
-														<li>Shoes</li>
-														<li>Speaker Store</li>
-														<li>Furniture</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										<div class="switcher-currency">
-											<strong class="label switcher-label">
-												<span>My Account</span>
+												<span>Account</span>
 											</strong>
 											<div class="switcher-options">
 												<div class="switcher-currency-trigger">
 													<div class="setting__menu">
-														<span><a href="#">Compare Product</a></span>
+													@auth
+													<span><a href="#">{{Auth::user()->name}}</a></span>
+													@endauth
+														<span><a href="">Compare Product</a></span>
 														<span><a href="#">My Account</a></span>
-														<span><a href="#">My Wishlist</a></span>
-														<span><a href="#">Sign In</a></span>
-														<span><a href="#">Create An Account</a></span>
+														<span><a href="/login">Login</a></span>
+														<span><a href="{{route('logout')}}">Logout</a></span>
 													</div>
+													
 												</div>
 											</div>
+											
 										</div>
 									</div>
 								</div>

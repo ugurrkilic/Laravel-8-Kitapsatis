@@ -194,9 +194,9 @@
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Adrees</label>
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Address</label>
                         <div class="col-md-11 col-sm-6 col-xs-12">
-                          <input type="text" name="adrees" value="{{$data->adrees}}" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="address" value="{{$data->address}}" class="form-control col-md-7 col-xs-12">
                         </div>
                         </div>
                                      <div class="item form-group">
@@ -233,7 +233,7 @@
                          <div class="item form-group">
                         <label class="control-label col-md-1 col-sm-3 col-xs-12">SmtpServer</label>
                         <div class="col-md-11 col-sm-6 col-xs-12">
-                          <input type="text" name="smtpserver" value="{{$data->adrees}}" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="smtpserver" value="{{$data->smptserver}}" class="form-control col-md-7 col-xs-12">
                         </div>
                         </div>
                                      <div class="item form-group">
