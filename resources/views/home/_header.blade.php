@@ -162,7 +162,7 @@
 													<span><a href="#">{{Auth::user()->name}}</a></span>
 													@endauth
 														<span><a href="">Compare Product</a></span>
-														<span><a href="#">My Account</a></span>
+														<span><a href="{{route('myprofile')}}">My Account</a></span>
 														<span><a href="/login">Login</a></span>
 														<span><a href="{{route('logout')}}">Logout</a></span>
 													</div>
