@@ -1,4 +1,3 @@
-
 <!--[if lte IE 9]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 	<![endif]-->
@@ -40,9 +39,9 @@
                                         @endforeach
 									</div>
 								</li>
-								<li class="drop"><a href="{{(route('aboutus'))}} ">Aboutus</a>
+								<li class="drop"><a href="{{(route('aboutus'))}} ">About Us</a>
 								</li>
-								<li class="drop"><a href=""{{(route('aboutus'))}}">References</a>
+								<li class="drop"><a href="{{(route('references'))}}">References</a>
 									<div class="megamenu dropdown">
 										<ul class="item item01">
 											<li><a href="about.html">About Page</a></li>
@@ -63,7 +62,7 @@
 										</ul>
 									</div>
 								</li>
-								<li><a href="{{(route('aboutus'))}}">Contact</a></li>
+								<li><a href="{{(route('contact'))}}">Contact</a></li>
 							</ul>
 						</nav>
 					</div>

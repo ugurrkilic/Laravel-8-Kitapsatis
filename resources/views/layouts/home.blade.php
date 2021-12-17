@@ -33,17 +33,10 @@
 </head>
 
 <body>
-	
 @include('home._header')
-
-@include('home._sliderarea')
-@include('home._newproducts')
-@include('home._staywithus')
-@include('home._allproducts')
-@include('home._ourblog')
-@include('home._bestseller')
-@include('home._quickwiev')
-
+@section('content')
+@show
 @include('home._footer')
+@yield('footer')
 </body>
 </html>

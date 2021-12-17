@@ -233,7 +233,7 @@
                          <div class="item form-group">
                         <label class="control-label col-md-1 col-sm-3 col-xs-12">SmtpServer</label>
                         <div class="col-md-11 col-sm-6 col-xs-12">
-                          <input type="text" name="smtpserver" value="{{$data->smptserver}}" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="smtpserver" value="{{$data->smtpserver}}" class="form-control col-md-7 col-xs-12">
                         </div>
                         </div>
                                      <div class="item form-group">
