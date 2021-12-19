@@ -29,29 +29,28 @@
         				<div class="contact-form-wrap">
         					<h2 class="contact__title">Get in touch</h2>
         					<p>Her türlü soru, görüş ve öneri için bize mesaj gönderebilirsiniz.</p>
-                            <form id="contact-form" action="#" method="post">
-                                <div class="single-contact-form space-between">
-                                    <input type="text" name="firstname" placeholder="First Name*">
-                                    <input type="text" name="lastname" placeholder="Last Name*">
+							@include('home.message')
+                            <form action="{{route('sendmessage')}}" method="post">
+							@csrf
+                                <div class="single-contact-form space-between" >
+                                    <input type="text" name="name" placeholder="Name & Surname*">
+                                    
                                 </div>
                                 <div class="single-contact-form space-between">
-                                    <input type="email" name="email" placeholder="Email*">
-                                    <input type="text" name="website" placeholder="Website*">
+                                    <input class="input" type="email" name="email" placeholder="Email*">
+                                    <input class="input" type="text" name="phone" placeholder="Phone Number*">
                                 </div>
                                 <div class="single-contact-form">
-                                    <input type="text" name="subject" placeholder="Subject*">
+                                    <input class="input" type="text" name="subject" placeholder="Subject*">
                                 </div>
                                 <div class="single-contact-form message">
-                                    <textarea name="message" placeholder="Type your message here.."></textarea>
+                                    <textarea class="input" name="message" placeholder="Type your message here.."></textarea>
                                 </div>
-                                <div class="contact-btn">
+                               <div class="contact-btn">
                                     <button type="submit">Send Email</button>
                                 </div>
                             </form>
                         </div> 
-                        <div class="form-output">
-                            <p class="form-messege">
-                        </div>
         			</div>
         			<div class="col-lg-4 col-12 md-mt-40 sm-mt-40">
         				<div class="wn__address">

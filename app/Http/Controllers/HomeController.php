@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Setting;
 use App\Http\Controllers\Controller;
+use App\Models\Message;
 
 class HomeController extends Controller
 {
@@ -28,31 +29,47 @@ class HomeController extends Controller
         return view('home.index',['setting'=> $setting]); 
 
     }
+    
     public function aboutus()
     {
         $setting = Setting::first();
         return view('home.about',['setting'=> $setting]); 
 
     }
-        public function references()
+
+    public function references()
     {
         $setting = Setting::first();
         return view('home.references',['setting'=> $setting]);  
 
     }
-        public function faq()
+
+    public function faq()
     {
         
         return view('home.about'); 
 
     }
-        public function contact()
+
+    public function contact()
     {
-        
         $setting = Setting::first();
         return view('home.contact',['setting'=> $setting]); 
-
     }
+
+    public function sendmessage(Request $request)
+    {
+        $data = new Message;
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->phone = $request->input('phone');
+        $data->subject = $request->input('subject');
+        $data->message = $request->input('message');
+        $data->save();
+
+        return redirect()->route('contact')->with('info', 'Mesajınız Kaydedildi.');  
+    }
+
     public function login()
     {
         return view('admin.login');
