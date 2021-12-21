@@ -32,6 +32,7 @@ Route::get('/faq', [HomeController::class,'faq'])->name('faq');
 Route::get('/contact', [HomeController::class,'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class,'sendmessage'])->name('sendmessage');
 Route::get('/product/{id}/{slug}', [HomeController::class,'product'])->name('product');
+Route::get('/categoryproducts/{id}/{slug}', [HomeController::class,'categoryproducts'])->name('categoryproducts');
 //Admin
 Route::middleware('auth')->prefix('admin')->group(function(){
 
