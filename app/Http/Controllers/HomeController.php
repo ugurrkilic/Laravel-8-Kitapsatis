@@ -28,9 +28,15 @@ class HomeController extends Controller
     {
         $setting = Setting::first();
         $slider = Product::select('id','title','image','price','slug')->limit(4)->get();
+        $new = Product::select('id','title','image','price','slug')->limit(6)->inRandomOrder()->get();
+        $all = Product::select('id','title','image','price','slug')->limit(8)->inRandomOrder()->get();
+        $best = Product::select('id','title','image','price','slug')->limit(8)->inRandomOrder()->get();
         $data= [
             'setting' => $setting,
             'slider' => $slider,
+            'new' => $new,
+            'all' => $all,
+            'best' => $best,
             'page' => 'home',
         ];
         return view('home.index',$data); 
@@ -38,6 +44,14 @@ class HomeController extends Controller
     }
     
     public function product($id,$slug)
+    {
+        $data = Product::find($id);
+        print_r($data);
+        exit();
+
+    }
+
+    public function addtocart($id)
     {
         $data = Product::find($id);
         print_r($data);
