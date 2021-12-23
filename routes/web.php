@@ -34,6 +34,8 @@ Route::post('/sendmessage', [HomeController::class,'sendmessage'])->name('sendme
 Route::get('/product/{id}/{slug}', [HomeController::class,'product'])->name('product');
 Route::get('/categoryproducts/{id}/{slug}', [HomeController::class,'categoryproducts'])->name('categoryproducts');
 Route::get('/addtocart/{id}', [HomeController::class,'addtocart'])->name('addtocart');
+Route::post('/getproduct', [HomeController::class,'getproduct'])->name('getproduct');
+Route::get('/productlist{search}', [HomeController::class,'productlist'])->name('productlist');
 //Admin
 Route::middleware('auth')->prefix('admin')->group(function(){
 

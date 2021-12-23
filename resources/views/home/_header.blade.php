@@ -226,16 +226,17 @@
 		<!-- //Header -->
 		<!-- Start Search Popup -->
 		<div class="brown--color box-search-content search_active block-bg close__top">
-			<form id="search_mini_form" class="minisearch" action="#">
+			<form id="search_mini_form" class="minisearch" action="{{route('getproduct')}}" method="post">
+			@csrf
 				<div class="field__search">
-					<input type="text" placeholder="Search entire store here...">
+				@livewire('search')
 					<div class="action">
-						<a href="#"><i class="zmdi zmdi-search"></i></a>
+						<button type="submit" class="search-btn"><i class="zmdi zmdi-search"></i></button>
 					</div>
 				</div>
 			</form>
+			@livewireScripts
 			<div class="close__wrap">
 				<span>close</span>
 			</div>
 		</div>
-		<!-- End Search Popup -->

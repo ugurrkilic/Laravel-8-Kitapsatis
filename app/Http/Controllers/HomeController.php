@@ -9,6 +9,7 @@ use App\Models\Setting;
 use App\Http\Controllers\Controller;
 use App\Models\Message;
 use App\Models\Product;
+use App\Models\Image;
 
 class HomeController extends Controller
 {
@@ -46,9 +47,30 @@ class HomeController extends Controller
     public function product($id,$slug)
     {
         $data = Product::find($id);
-        print_r($data);
-        exit();
+        $datalist = Image::where('product_id',$id)->get();
 
+        return view('home.product_detail',['data'=> $data,'datalist'=> $datalist]); 
+    }
+
+    public function getproduct(Request $request)
+    {
+        $search=$request->input('search');
+        $count = Product::where('title','like','%'.$search.'%')->get()->count();
+        if($count==1)
+        {
+            $data = Product::where('title','like','%'.$search.'%')->first();
+            return redirect()->route('product',['id'=> $data->id,'slug'=> $data->slug]);
+        }
+        else
+        {
+            return redirect()->route('productlist',['search'=> $search]);
+        } 
+    }
+
+    public function productlist($search)
+    {
+        $datalist = Product::where('title','like','%'.$search.'%')->get();
+        return view('home.search_products',['search'=> $search,'datalist'=>$datalist]);
     }
 
     public function addtocart($id)
