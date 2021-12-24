@@ -42,21 +42,29 @@
         						<div class="col-lg-6 col-12">
         							<div class="product__info__main">
         								<h1>{{$data->title}}</h1>
-        								<div class="product-reviews-summary d-flex">
-        									<ul class="rating-summary d-flex">
-    											<li><i class="zmdi zmdi-star-outline"></i></li>
-    											<li><i class="zmdi zmdi-star-outline"></i></li>
-    											<li><i class="zmdi zmdi-star-outline"></i></li>
-    											<li class="off"><i class="zmdi zmdi-star-outline"></i></li>
-    											<li class="off"><i class="zmdi zmdi-star-outline"></i></li>
-        									</ul>
-        								</div>
         								<div class="price-box">
         									<span>${{$data->price}}</span>
         								</div>
 										<div class="product__overview">
         									<p>{{$data->description}}</p>
         								</div>
+
+										<div>
+										    @php
+											$avgrev = \App\Http\Controllers\HomeController::avrgreview($data->id);
+											$countreview = \App\Http\Controllers\HomeController::countreview($data->id);
+											@endphp
+											
+											<div class="review-ratings">
+                                <div class="rating-summary d-flex">
+                                    <i class="@if($avgrev>=1) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i class="@if($avgrev>=2) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i class="@if($avgrev>=3) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i class="@if($avgrev>=4) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+								    <i class="@if($avgrev>=5) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+                                </div>
+                            </div>
+											<a href="tab2">{{ $countreview }} Review(s) {{$avgrev}} / Add Review</a>   
         								<div class="box-tocart d-flex">
         									<span>Qty</span>
         									<input id="qty" class="input-text qty" name="qty" min="1" value="1" title="Qty" type="number">
@@ -106,7 +114,7 @@
         				<div class="product__info__detailed">
 							<div class="pro_details_nav nav justify-content-start" role="tablist">
 	                            <a class="nav-item nav-link active" data-toggle="tab" href="#nav-details" role="tab">Details</a>
-	                            <a class="nav-item nav-link" data-toggle="tab" href="#nav-review" role="tab">Reviews</a>
+	                            <a class="nav-item nav-link" data-toggle="tab" href="#nav-review" role="tab">Reviews ({{$countreview}})</a>
 	                        </div>
 	                        <div class="tab__container">
 	                        	<!-- Start Single Tab Content -->
@@ -118,104 +126,34 @@
 	                        	<!-- End Single Tab Content -->
 	                        	<!-- Start Single Tab Content -->
 	                        	<div class="pro__tab_label tab-pane fade" id="nav-review" role="tabpanel">
-									<div class="review__attribute">
-										<h1>Customer Reviews</h1>
-										<h2>Hastech</h2>
-										<div class="review__ratings__type d-flex">
-											<div class="review-ratings">
-												<div class="rating-summary d-flex">
-													<span>Quality</span>
-			    									<ul class="rating d-flex">
-														<li><i class="zmdi zmdi-star"></i></li>
-														<li><i class="zmdi zmdi-star"></i></li>
-														<li><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-			    									</ul>
-												</div>
-
-												<div class="rating-summary d-flex">
-													<span>Price</span>
-			    									<ul class="rating d-flex">
-														<li><i class="zmdi zmdi-star"></i></li>
-														<li><i class="zmdi zmdi-star"></i></li>
-														<li><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-			    									</ul>
-												</div>
-												<div class="rating-summary d-flex">
-													<span>value</span>
-			    									<ul class="rating d-flex">
-														<li><i class="zmdi zmdi-star"></i></li>
-														<li><i class="zmdi zmdi-star"></i></li>
-														<li><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-			    									</ul>
-												</div>
-											</div>
-											<div class="review-content">
-												<p>Hastech</p>
-												<p>Review by Hastech</p>
-												<p>Posted on 11/6/2018</p>
-											</div>
-										</div>
-									</div>
+									<div class="review-item clearfix">
+									@foreach ($reviews as $rs)
+                        <div class="review-item-submitted">
+                          <strong> {{$rs->user->name}} </strong>
+                          <em>{{$rs->created_at}}</em>
+                          <div class="rateit" data-rateit-backingfld="#backing5" data-rateit-resetable="false"  data-rateit-ispreset="true" data-rateit-min="0" data-rateit-max="5">
+                          </div>
+						  <div class="review-item-content">
+						  
+						    <div class="review-ratings">
+                                <div class="rating-summary d-flex">
+                                    <i class="@if($rs->rate>=1) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i class="@if($rs->rate>=2) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i class="@if($rs->rate>=3) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i class="@if($rs->rate>=4) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+								    <i class="@if($rs->rate>=5) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+                                </div>
+                            </div>
+							<strong> {{$rs->subject}} </strong>
+						  <p>{{$rs->review}} </p>
+						  <br>
+                        </div>                                             
+                      </div>
+					  @endforeach
 									<div class="review-fieldset">
 										<h2>You're reviewing:</h2>
 										<h3>{{$data->title}}</h3>
-										<div class="review-field-ratings">
-											<div class="product-review-table">
-												<div class="review-field-rating d-flex">
-													<span>Quality</span>
-													<ul class="rating d-flex">
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-			    									</ul>
-												</div>
-												<div class="review-field-rating d-flex">
-													<span>Price</span>
-													<ul class="rating d-flex">
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-			    									</ul>
-												</div>
-												<div class="review-field-rating d-flex">
-													<span>Value</span>
-													<ul class="rating d-flex">
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-														<li class="off"><i class="zmdi zmdi-star"></i></li>
-			    									</ul>
-												</div>
-											</div>
-										</div>
-										<div class="review_form_field">
-											<div class="input__box">
-												<span>Nickname</span>
-												<input id="nickname_field" type="text" name="nickname">
-											</div>
-											<div class="input__box">
-												<span>Summary</span>
-												<input id="summery_field" type="text" name="summery">
-											</div>
-											<div class="input__box">
-												<span>Review</span>
-												<textarea name="review"></textarea>
-											</div>
-											<div class="review-form-actions">
-												<button>Submit Review</button>
-											</div>
-										</div>
+										@livewire('review',['id'=>$data->id])
 									</div>
 	                        	</div>
 	                        	<!-- End Single Tab Content -->
@@ -223,11 +161,11 @@
         				</div>
 
         			</div>
-        			
+        		</div>	
         		</div>
         	</div>
         </div>
         <!-- End main Content -->        
-	
+	</div>
 
 @endsection

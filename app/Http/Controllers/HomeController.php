@@ -10,6 +10,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Message;
 use App\Models\Product;
 use App\Models\Image;
+use App\Models\Review;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +25,16 @@ class HomeController extends Controller
         
         return Setting::first();
 
+    }
+
+    public static function countreview($id)
+    {
+        return Review::where('product_id', $id)->count();
+    }
+
+    public static function avrgreview($id)
+    {
+        return Review::where('product_id', $id)->average('rate');
     }
     
     public function index()
@@ -48,8 +60,9 @@ class HomeController extends Controller
     {
         $data = Product::find($id);
         $datalist = Image::where('product_id',$id)->get();
+        $reviews = Review::where('product_id',$id)->get();
 
-        return view('home.product_detail',['data'=> $data,'datalist'=> $datalist]); 
+        return view('home.product_detail',['data'=> $data,'datalist'=> $datalist,'reviews'=> $reviews]); 
     }
 
     public function getproduct(Request $request)

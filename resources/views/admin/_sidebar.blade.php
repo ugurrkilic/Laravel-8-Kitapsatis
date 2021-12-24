@@ -19,6 +19,13 @@
      <i class="fa fa-edit"></i> Contact Messages</a>
     </li>
   </ul>
+
+  <ul class="nav side-menu">
+    <li class="nav-item has-treview">
+     <a href="{{route('admin_review')}}" class="nav-link">
+     <i class="fa fa-edit"></i> Review</a>
+    </li>
+  </ul>
 </div>
 <br>
 

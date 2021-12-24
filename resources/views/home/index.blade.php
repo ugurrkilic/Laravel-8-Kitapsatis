@@ -44,13 +44,20 @@
 									</div>
 								</div>
 								<div class="product__hover--content">
-									<ul class="rating d-flex">
-										<li class="on"><i class="fa fa-star-o"></i></li>
-										<li class="on"><i class="fa fa-star-o"></i></li>
-										<li class="on"><i class="fa fa-star-o"></i></li>
-										<li><i class="fa fa-star-o"></i></li>
-										<li><i class="fa fa-star-o"></i></li>
-									</ul>
+									@php
+											$avgrev = \App\Http\Controllers\HomeController::avrgreview($rs->id);
+											$countreview = \App\Http\Controllers\HomeController::countreview($rs->id);
+											@endphp
+											
+											<div class="review-ratings">
+                                <div class="rating-summary d-flex">
+                                    <i class="@if($avgrev>=1) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i class="@if($avgrev>=2) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i class="@if($avgrev>=3) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i class="@if($avgrev>=4) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+								    <i class="@if($avgrev>=5) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i>({{$countreview}})</i>
+                                </div>
 								</div>
 							</div>
 						</div>
@@ -66,19 +73,8 @@
 		<section class="wn__newsletter__area bg-image--2">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-7 offset-lg-5 col-md-12 col-12 ptb--150">
-						<div class="section__title text-center">
-							<h2>Stay With Us</h2>
-						</div>
-						<div class="newsletter__block text-center">
-							<p>Subscribe to our newsletters now and stay up-to-date with new collections, the latest lookbooks and exclusive offers.</p>
-							<form action="#">
-								<div class="newsletter__box">
-									<input type="email" placeholder="Enter your e-mail">
-									<button>Subscribe</button>
-								</div>
-							</form>
-						</div>
+					<div class="col-lg-7 offset-lg-5 col-md-12 col-12 ptb--220">
+						
 					</div>
 				</div>
 			</div>
@@ -128,13 +124,22 @@
 												</div>
 											</div>
 											<div class="product__hover--content">
-												<ul class="rating d-flex">
-													<li class="on"><i class="fa fa-star-o"></i></li>
-													<li class="on"><i class="fa fa-star-o"></i></li>
-													<li class="on"><i class="fa fa-star-o"></i></li>
-													<li><i class="fa fa-star-o"></i></li>
-													<li><i class="fa fa-star-o"></i></li>
-												</ul>
+									@php
+											$avgrev = \App\Http\Controllers\HomeController::avrgreview($rs->id);
+											$countreview = \App\Http\Controllers\HomeController::countreview($rs->id);
+											@endphp
+											
+											<div class="review-ratings">
+                                <div class="rating-summary d-flex">
+                                    <i class="@if($avgrev>=1) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i class="@if($avgrev>=2) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i class="@if($avgrev>=3) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i class="@if($avgrev>=4) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+								    <i class="@if($avgrev>=5) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i>({{$countreview}})</i>
+                                </div>
+								</div>
+							
 											</div>
 										</div>
 									</div>	
@@ -178,13 +183,21 @@
 												</div>
 											</div>
 											<div class="product__hover--content">
-												<ul class="rating d-flex">
-													<li class="on"><i class="fa fa-star-o"></i></li>
-													<li class="on"><i class="fa fa-star-o"></i></li>
-													<li class="on"><i class="fa fa-star-o"></i></li>
-													<li><i class="fa fa-star-o"></i></li>
-													<li><i class="fa fa-star-o"></i></li>
-												</ul>
+												@php
+											$avgrev = \App\Http\Controllers\HomeController::avrgreview($rs->id);
+											$countreview = \App\Http\Controllers\HomeController::countreview($rs->id);
+											@endphp
+											
+											<div class="review-ratings">
+                                <div class="rating-summary d-flex">
+                                    <i class="@if($avgrev>=1) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i class="@if($avgrev>=2) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i class="@if($avgrev>=3) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i class="@if($avgrev>=4) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+								    <i class="@if($avgrev>=5) zmdi zmdi-star @else zmdi zmdi-star-outline @endif"></i>
+									<i>({{$countreview}})</i>
+                                </div>
+								</div>
 											</div>
 										</div>
 									</div>	
@@ -194,121 +207,7 @@
 					    </div>
 				    </div>
 		</section>
-		<!-- Start BEst Seller Area -->
-		<!-- Start Recent Post Area -->
-		<section class="wn__recent__post bg--gray ptb--80">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="section__title text-center">
-							<h2 class="title__be--2">Our <span class="color--theme">Blog</span></h2>
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form</p>
-						</div>
-					</div>
-				</div>
-				<div class="row mt--50">
-					<div class="col-md-6 col-lg-4 col-sm-12">
-						<div class="post__itam">
-							<div class="content">
-								<h3><a href="blog-details.html">International activities of the Frankfurt Book </a></h3>
-								<p>We are proud to announce the very first the edition of the frankfurt news.We are proud to announce the very first of  edition of the fault frankfurt news for us.</p>
-								<div class="post__time">
-									<span class="day">Dec 06, 18</span>
-									<div class="post-meta">
-										<ul>
-											<li><a href="#"><i class="bi bi-love"></i>72</a></li>
-											<li><a href="#"><i class="bi bi-chat-bubble"></i>27</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-4 col-sm-12">
-						<div class="post__itam">
-							<div class="content">
-								<h3><a href="blog-details.html">Reading has a signficant info  number of benefits</a></h3>
-								<p>Find all the information you need to ensure your experience.Find all the information you need to ensure your experience . Find all the information you of.</p>
-								<div class="post__time">
-									<span class="day">Mar 08, 18</span>
-									<div class="post-meta">
-										<ul>
-											<li><a href="#"><i class="bi bi-love"></i>72</a></li>
-											<li><a href="#"><i class="bi bi-chat-bubble"></i>27</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6 col-lg-4 col-sm-12">
-						<div class="post__itam">
-							<div class="content">
-								<h3><a href="blog-details.html">The London Book Fair is to be packed with exciting </a></h3>
-								<p>The London Book Fair is the global area inon marketplace for rights negotiation.The year  London Book Fair is the global area inon forg marketplace for rights.</p>
-								<div class="post__time">
-									<span class="day">Nov 11, 18</span>
-									<div class="post-meta">
-										<ul>
-											<li><a href="#"><i class="bi bi-love"></i>72</a></li>
-											<li><a href="#"><i class="bi bi-chat-bubble"></i>27</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End Recent Post Area -->
-		<!-- Best Sale Area -->
-		<section class="best-seel-area pt--80 pb--60">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="section__title text-center pb--50">
-							<h2 class="title__be--2">Best <span class="color--theme">Seller </span></h2>
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered lebmid alteration in some ledmid form</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="slider center">
-				<!-- Single product start -->
-				@foreach ($best as $rs )
-				<div class="product product__style--3">
-					<div class="product__thumb">
-						<a class="first__img" href="single-product.html"><img src="{{ Storage::url($rs->image) }}" style="height:150px" alt="product image"></a>
-					</div>
-					<div class="product__content content--center">
-						<div class="action">
-							<div class="actions_inner">
-								<ul class="add_to_links">
-									<li><a class="cart" href="cart.html"><i class="bi bi-shopping-bag4"></i></a></li>
-									<li><a class="wishlist" href="wishlist.html"><i class="bi bi-shopping-cart-full"></i></a></li>
-									<li><a class="compare" href="#"><i class="bi bi-heart-beat"></i></a></li>
-									<li><a title="Quick View" class="quickview modal-view detail-link" href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug] )}}"><i class="bi bi-search"></i></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="product__hover--content">
-							<ul class="rating d-flex">
-								<li class="on"><i class="fa fa-star-o"></i></li>
-								<li class="on"><i class="fa fa-star-o"></i></li>
-								<li class="on"><i class="fa fa-star-o"></i></li>
-								<li><i class="fa fa-star-o"></i></li>
-								<li><i class="fa fa-star-o"></i></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- Single product end -->
-				@endforeach
-			</div>
-		</section>
-		<!-- Best Sale Area Area -->
-	
+
 @endsection
 
 

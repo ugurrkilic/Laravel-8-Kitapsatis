@@ -162,6 +162,7 @@
 													@endauth
 														<span><a href="">Compare Product</a></span>
 														<span><a href="{{route('myprofile')}}">My Account</a></span>
+														<span><a href="{{route('myreviews')}}">My Review</a></span>
 														<span><a href="/login">Login</a></span>
 														<span><a href="{{route('logout')}}">Logout</a></span>
 													</div>
@@ -235,7 +236,9 @@
 					</div>
 				</div>
 			</form>
+			@section('footerjs')
 			@livewireScripts
+			@endsection
 			<div class="close__wrap">
 				<span>close</span>
 			</div>

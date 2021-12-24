@@ -37,6 +37,6 @@
 @section('content')
 @show
 @include('home._footer')
-@yield('footer')
+@yield('footerjs')
 </body>
 </html>
