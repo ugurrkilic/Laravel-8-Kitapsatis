@@ -42,25 +42,8 @@
 								<li class="drop"><a href="{{(route('aboutus'))}} ">About Us</a>
 								</li>
 								<li class="drop"><a href="{{(route('references'))}}">References</a>
-									<div class="megamenu dropdown">
-										<ul class="item item01">
-											<li><a href="about.html">About Page</a></li>
-											<li class="label2"><a href="portfolio.html">Portfolio</a>
-												<ul>
-													<li><a href="portfolio.html">Portfolio</a></li>
-													<li><a href="portfolio-details.html">Portfolio Details</a></li>
-												</ul>
-											</li>
-										</ul>
-									</div>
 								</li>
-								<li class="drop"><a href="{{(route('aboutus'))}}">Faq</a>
-									<div class="megamenu dropdown">
-										<ul class="item item01">
-											<li><a href="blog.html">Blog Page</a></li>
-											<li><a href="blog-details.html">Blog Details</a></li>
-										</ul>
-									</div>
+								<li class="drop"><a href="{{(route('faq'))}}">Faq</a>
 								</li>
 								<li><a href="{{(route('contact'))}}">Contact</a></li>
 							</ul>

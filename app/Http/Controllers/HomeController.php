@@ -11,7 +11,7 @@ use App\Models\Message;
 use App\Models\Product;
 use App\Models\Image;
 use App\Models\Review;
-
+use App\Models\Faq;
 
 class HomeController extends Controller
 {
@@ -118,8 +118,8 @@ class HomeController extends Controller
 
     public function faq()
     {
-        
-        return view('home.about'); 
+        $datalist = Faq::all()->sortBy('position');  
+        return view('home.faq',['datalist'=> $datalist]); 
 
     }
 
