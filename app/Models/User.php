@@ -65,5 +65,11 @@ class User extends Authenticatable
         
     }
 
+    public function shopcart()
+    {
+        return $this->hasMany(Shopcart::class);
+        
+    }
+
 
 }

@@ -66,11 +66,14 @@
                             </div>
 											<a href="tab2">{{ $countreview }} Review(s) {{$avgrev}} / Add Review</a>   
         								<div class="box-tocart d-flex">
+										<form action="{{route('user_shopcart_add',['id' => $data->id])}}" method="post">
+										@csrf
         									<span>Qty</span>
-        									<input id="qty" class="input-text qty" name="qty" min="1" value="1" title="Qty" type="number">
+        									<input id="qty" class="input-text qty" name="quantity" min="1" max="{{$data->quantity}}" value="1" title="Qty" type="number">
         									<div class="addtocart__actions">
         										<button class="tocart" type="submit" title="Add to Cart">Add to Cart</button>
         									</div>
+										</form>	
 											<div class="product-addto-links clearfix">
 												<a class="wishlist" href="#"></a>
 												<a class="compare" href="#"></a>
