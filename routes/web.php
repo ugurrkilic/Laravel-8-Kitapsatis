@@ -118,7 +118,7 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
 
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function(){
     
-    Route::get('/profile', [UserController::class,'index'])->name('userprofile');
+    Route::get('/profile', [UserController::class,'index'])->name('profile.show');
 
     #Product
     Route::prefix('product')->group(function(){
@@ -160,6 +160,10 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function(){
         Route::get('show/{id}',[OrderController::class,'show'])->name('user_order_show');
 
     });
+
+
+
+
     
 });     
 

@@ -32,10 +32,10 @@
 						    <div class="card">
 						        <div class="acc-header" role="tab" id="headingOne">
 						          	<h5>
-						                <a data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">{{$rs->question}} </a>
+						                <a class="collapsed" data-toggle="collapse" href="#collapseOne{{$rs->id}}" role="button" aria-expanded="true" aria-controls="collapseOne">{{$rs->question}} </a>
 						          	</h5>
 						        </div>
-						        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+						        <div id="collapseOne{{$rs->id}}" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
 					            	<div class="card-body">{!! $rs->answer !!} </div>
 						        </div>
 						    </div>

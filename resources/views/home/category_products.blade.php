@@ -125,7 +125,7 @@
 								  @foreach ($datalist as $rs)	
 		        					<div class="product product__style--3 col-lg-4 col-md-4 col-sm-6 col-12">
 			        					<div class="product__thumb">
-											<a class="first__img" href="single-product.html"><img src="{{ Storage::url($rs->image) }}" alt="product image"></a>
+											<a class="first__img" href="single-product.html"><img src="{{ Storage::url($rs->image) }}" height="400px" alt="product image"></a>
 											<a class="second__img animation1" href="single-product.html"><img src="{{ Storage::url($rs->image) }}" alt="product image"></a>
 											<div class="hot__box">
 												<span class="hot-label">BEST SALLER</span>

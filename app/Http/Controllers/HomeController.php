@@ -12,9 +12,16 @@ use App\Models\Product;
 use App\Models\Image;
 use App\Models\Review;
 use App\Models\Faq;
+use Illuminate\Support\Facades\DB;
+use Shopcart;
 
 class HomeController extends Controller
 {
+    public static function getCount()
+    {
+        return DB::table('shopcarts')->where('user_id', Auth::id())->count();
+
+    }
     public static function categorylist()
     {
         return Category::where('parent_id','=',0)->with('children')->get();

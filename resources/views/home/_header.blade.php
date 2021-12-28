@@ -16,7 +16,8 @@
 						</div>
 					</div>
 					@php
-					$parentCategories = \App\Http\Controllers\HomeController::categorylist()
+					$parentCategories = \App\Http\Controllers\HomeController::categorylist();
+					$count = \App\Http\Controllers\HomeController::getCount();
 					@endphp
 					<div class="col-lg-8 d-none d-lg-block">
 						<nav class="mainmenu__nav">
@@ -34,7 +35,7 @@
                                        </ul>
                                     </li>
                                     @else
-                                    <li><a href="">{{$subcategory->title}}</a></li>
+                                    <li><a href="{{route('categoryproducts',['id'=>$subcategory->id, 'slug'=>$subcategory->title ])}}">{{$subcategory->title}}</a></li>
 									    @endif
                                         @endforeach
 									</div>
@@ -53,7 +54,7 @@
 						<ul class="header__sidebar__right d-flex justify-content-end align-items-center">
 							<li class="shop_search"><a class="search__active" href="#"></a></li>
 							<li class="wishlist"><a href="#"></a></li>
-							<li class="shopcart"><a class="checkout__btn" href="{{route('user_shopcart')}}"><span class="product_qun">3</span></a>
+							<li class="shopcart"><a class="checkout__btn" href="{{route('user_shopcart')}}"><span class="product_qun">{{$count}} </span></a>
 							</li>
 							<li class="setting__bar__icon"><a class="setting__active" href="#"></a>
 						
