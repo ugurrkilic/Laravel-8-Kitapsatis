@@ -90,14 +90,6 @@
                 <div class="row">
                     <div class="col-lg-6 offset-lg-6">
                         <div class="cartbox__total__area">
-                            <div class="cartbox-total d-flex justify-content-between">
-                                <ul class="cart__total__list">
-                                    <li>Sub Total</li>
-                                </ul>
-                                <ul class="cart__total__tk">
-                                    <li>${{$total}} </li>
-                                </ul>
-                            </div>
                             <div class="cart__total__amount">
                                 <span>Grand Total</span>
                                 <span> ${{$total}} </span>

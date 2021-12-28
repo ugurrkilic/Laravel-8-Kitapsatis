@@ -20,7 +20,7 @@ class CreateOrderitemsTable extends Migration
             $table->integer('product_id');
             $table->integer('price');
             $table->integer('quantity');
-            $table->float('amount',200);
+            $table->float('amount');
             $table->string('note',150)->nullable();
             $table->string('status',30)->default('New');
             $table->timestamps();

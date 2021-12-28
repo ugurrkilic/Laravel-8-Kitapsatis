@@ -59,7 +59,7 @@ class OrderController extends Controller
             $data2 = new Orderitem;
             $data2->user_id = Auth::id();
             $data2->product_id = $rs->product_id;
-            $data2->order_id = $rs->id;
+            $data2->order_id = $data->id;
             $data2->price = $rs->product->price;
             $data2->quantity = $rs->quantity;
             $data2->amount = $rs->quantity * $rs->product->price;
