@@ -70,6 +70,7 @@
 													<span><a href="#">{{Auth::user()->name}}</a></span>
 													<span><a href="{{route('myprofile')}}">My Account</a></span>
 													<span><a href="{{route('user_products')}}">My Product</a></span>
+													<span><a href="{{route('user_orders')}}">My Orders</a></span>
 													<span><a href="{{route('myreviews')}}">My Review</a></span>
 													<span><a href="{{route('user_shopcart')}}">My Shopcart</a></span>
 													<span><a href="{{route('logout')}}">Logout</a></span>

@@ -29,6 +29,7 @@
         						<h3 class="wedget__title">User Panel</h3>
         						<ul>
         							<li><a href="{{route('myprofile')}}">My Profile</a></li>
+									<li><a href="{{route('user_orders')}}">My Orders</a></li>
 									<li><a href="{{route('myreviews')}}">My Reviews</a></li>
 									<li><a href="{{route('user_shopcart')}}">My Shopcart</a></li>
 									<li><a href="{{route('user_products')}}">My Product</a></li>

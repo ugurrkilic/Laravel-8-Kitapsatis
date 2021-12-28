@@ -29,6 +29,7 @@
         						<h3 class="wedget__title">User Panel</h3>
         						<ul>
         							<li><a href="{{route('myprofile')}}">My Profile</a></li>
+                                    <li><a href="{{route('user_orders')}}">My Orders</a></li>
 									<li><a href="{{route('myreviews')}}">My Reviews</a></li>
 									<li><a href="{{route('user_shopcart')}}">My Shopcart</a></li>
 									<li><a href="{{route('user_products')}}">My Product</a></li>
@@ -40,26 +41,25 @@
 <div class="col-lg-10 col-12 order-12 order-lg-12">
               @include('home.message')
               <!-- cart-main-area start -->
-        <div class="">
+        <div class="cart-main-area section-padding--lg bg--white">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 ol-lg-12">
-                            <div class="">
+              
+                            <div>
                                 <table>
                                     <thead>
-                                        <tr >
+                                        <tr class="title-top">
                                             <th>Image</th>
                                             <th>Product</th>
                                             <th>Price</th>
                                             <th>Quantity</th>
-                                            <th>Total</th>
-                                            <th>Remove</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                            <th>Note</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    @php
-                                    $total = 0;
-                                    @endphp
                                     @foreach( $datalist as $rs)
                                         <tr>
                                             <td><a href="#">
@@ -67,20 +67,13 @@
                                             <img src="{{ Storage::url($rs->product->image) }}" height="30" alt="">
                                             @endif
                                             </a></td>
-                                            <td ><a href="{{route('product',['id'=>$rs->product->id,'slug'=>$rs->product->slug] )}} ">{{ $rs->product->title}}</a></td>
+                                            <td><a href="{{route('product',['id'=>$rs->product->id,'slug'=>$rs->product->slug] )}} ">{{ $rs->product->title}}</a></td>
                                             <td><span>{{ $rs->product->price}}</span></td>
-                                            <td>
-                                            <form action="{{route('user_shopcart_update',['id'=> $rs->id])}}" method="post">
-                                            @csrf
-                                            <input name="quantity" type="number" value="{{ $rs->quantity}}" min="1" max="{{$rs->product->quantity}}" onchange="this.form.submit()">
-                                            </form>
-                                            </td>
-                                            <td>{{ $rs->product->price*$rs->quantity}}</td>
-                                            <td><a href="{{route('user_shopcart_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are You Sure?')">X</a></td>
+                                            <td>{{ $rs->quantity}}</td>
+                                            <td>{{ $rs->amount}}</td>
+                                            <td>{{ $rs->status}}</td>
+                                            <td>{{ $rs->note}}</td>
                                         </tr>
-                                    @php
-                                    $total += $rs->product->price*$rs->quantity;
-                                    @endphp  
                                     @endforeach
                                     </tbody>
                                 </table>
@@ -95,20 +88,13 @@
                                     <li>Sub Total</li>
                                 </ul>
                                 <ul class="cart__total__tk">
-                                    <li>${{$total}} </li>
+                                    <li>$</li>
                                 </ul>
                             </div>
                             <div class="cart__total__amount">
                                 <span>Grand Total</span>
-                                <span> ${{$total}} </span>
-                            </div>
-                            <form action="{{route('user_order_add')}}" method="post">
-                            @csrf
-                            <div style="float:right;margin-top: 0px;">
-                                <input type="hidden" name="total" value="{{$total}}">
-                                <button class="btn btn btn-primary">Place Order</button>
-                            </div>    
-                            </form>    
+                                <span> $</span>
+                            </div>   
                             </div>
                         </div>
                     </div>
@@ -116,8 +102,6 @@
             </div>  
         </div>
         <!-- cart-main-area end -->
-              
-
         		    </div>
 				</div>	
         	</div>

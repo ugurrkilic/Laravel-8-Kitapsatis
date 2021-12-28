@@ -71,5 +71,17 @@ class User extends Authenticatable
         
     }
 
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+        
+    }
+
+    public function orderitem()
+    {
+        return $this->belongsTo(Orderitem::class);
+        
+    }
+
 
 }
