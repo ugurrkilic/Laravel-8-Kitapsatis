@@ -1,4 +1,4 @@
-<div class="main_menu_side hidden-print main_menu">
+<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
   <ul class="nav side-menu">
     <li class="nav-item has-treview">
      <a href="{{route('admin_category')}}" class="nav-link">
@@ -32,6 +32,19 @@
      <a href="{{route('admin_faq')}}" class="nav-link">
      <i class="fa fa-edit"></i> FAQ</a>
     </li>
+  </ul>
+
+  <ul class="nav side-menu">
+  <li><a><i class="fa fa-clone"></i>Orders <span class="fa fa-chevron-down"></span></a>
+    <ul class="nav child_menu">
+      <li><a href="{{route('admin_orders')}} ">All Orders</a></li>
+      <li><a href="{{route('admin_order_list',['status'=>'new'])}} ">New Orders</a></li>
+      <li><a href="{{route('admin_order_list',['status'=>'accepted'])}} ">Accepted Orders</a></li>
+      <li><a href="{{route('admin_order_list',['status'=>'canceled'])}} ">Canceled Orders</a></li>
+      <li><a href="{{route('admin_order_list',['status'=>'shipping'])}} ">Shipping Orders</a></li>
+      <li><a href="{{route('admin_order_list',['status'=>'completed'])}} ">Completed Orders</a></li>
+    </ul>
+  </li>
   </ul>
 </div>
 <br>
