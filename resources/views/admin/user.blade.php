@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Contact Messages List')
+@section('title','User List')
 
 @section('content')
 
@@ -93,8 +93,9 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Review Detail</h3>
+                <h3>Users</h3>
               </div>
+
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                   <div class="input-group">
@@ -106,11 +107,13 @@
                 </div>
               </div>
             </div>
+
             <div class="clearfix"></div>
 
             <div class="row">
-            @include('home.message')
               <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                @include('home.message')
                   <div class="x_content">
                   <div class="x_panel">
                   <div class="x_content">
@@ -118,41 +121,45 @@
                       <thead>
                         <tr>
                           <th>Id</th>
+                          <th></th>
                           <th>Name</th>
-                          <th>Product</th>
-                          <th>Subject</th>
-                          <th>Review</th>
-                          <th>Rate</th>
-                          <th>Status</th>
-                          <th>Date</th>
+                          <th>Email</th>
+                          <th>Phone</th>
+                          <th>Address</th>
+                          <th>Role</th>
                           <th>Edit</th>
                           <th>Delete</th>
                         </tr>
                       </thead>
+
                       <tbody>
                         @foreach( $datalist as $rs)
                         <tr>
                           <td>{{ $rs->id}}</td>
                           <td>
-                          <a href="{{route('admin_user_show',['id'=> $rs->user->id])}}" onclick="return !window.open(this.href,'','top=50 width=1100,height=700')">
-                          {{$rs->user->name}}</a></td>
-                          <td><a href="{{route('product',['id'=>$rs->product->id,'slug' => $rs->product->slug])}}" >
-                          {{$rs->product->title}} </a></td>
-                          <td>{{ $rs->subject}}</td>
-                          <td>{{ $rs->review}}</td>
-                          <td>{{ $rs->rate}}</td>
-                          <td>{{ $rs->status}}</td>
-                          <td>{{ $rs->created_at}}</td>
-                          <td><a href="{{route('admin_review_show',['id'=>$rs->id])}}" onclick="return !window.open(this.href,'','top=50 width=1100,height=700')" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>Edit</a></td>
-                          <td><a href="{{route('admin_review_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are You Sure?')"class="btn btn-danger btn-xs">
+                            @if($rs->profile_photo_path)
+                            <img src="{{ Storage::url($rs->profile_photo_path) }}" height="50" style="border-raidus:10px" alt="">
+                            @endif
+                          </td>
+                          <td>{{ $rs->name}}</td>
+                          <td>{{ $rs->email}}</td>
+                          <td>{{ $rs->phone}}</td>
+                          <td>{{ $rs->address}}</td>
+                          <td> @foreach ($rs->roles as $row)
+                          {{$row->name}},
+                          @endforeach
+                          <a href="{{route('admin_user_roles',['id'=> $rs->id])}}" onclick="return !window.open(this.href,'','top=50 width=1100,height=700')">
+                          <i class="fa fa-external-link-square"></i></a></td>
+                          <td><a href="{{route('admin_user_edit',['id'=>$rs->id])}}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>Edit</a></td>
+                          <td><a href="{{route('admin_user_delete',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are You Sure?')"class="btn btn-danger btn-xs">
                           <i class="fa fa-trash-o"></i> Delete</a></td>
                         </tr>
                        @endforeach
                       </tbody>
                     </table>
                   </div>
-                 </div>
-                  
+                </div>
+                  </div>
                 </div>
               </div>
             </div>

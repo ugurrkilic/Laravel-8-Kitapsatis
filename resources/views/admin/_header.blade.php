@@ -11,7 +11,9 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="{{asset('assets')}}/admin/images/img.jpg" alt="..." class="img-circle profile_img">
+              @if(Auth::user()->profile_photo_path)
+              <img src="{{ Storage::url(Auth::user()->profile_photo_path) }}" class="img-circle profile_img">
+              @endif
               </div>
               <div class="profile_info">
                 @auth

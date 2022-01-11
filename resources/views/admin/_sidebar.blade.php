@@ -46,8 +46,18 @@
     </ul>
   </li>
   </ul>
+
+   <ul class="nav side-menu">
+    <li class="nav-item has-treview">
+     <a href="{{route('admin_users')}}" class="nav-link">
+     <i class="fa fa-edit"></i> Users</a>
+    </li>
+  </ul>
+  
 </div>
 <br>
+
+ 
 
 <div class="main_menu_side hidden-print main_menu">
  <div class="menu_section">

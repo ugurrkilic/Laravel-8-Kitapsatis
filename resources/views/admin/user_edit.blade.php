@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Admin Order List')
+@section('title','Edit Product')
 
 @section('content')
  <!-- /menu footer buttons -->
@@ -123,7 +123,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Order List</h3>
+                <h3>Edit Product</h3>
               </div>
 
               <div class="title_right">
@@ -144,7 +144,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Order List</h2>
+                    <h2>Edit Product</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -163,39 +163,57 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <table id="datatable" class="table table-striped table-bordered">
-                      <thead>
-                        <tr>
-                          <th>Id</th>
-                          <th>User</th>
-                          <th>Name</th>
-                          <th>Phone</th>
-                          <th>Address</th>
-                          <th>Total</th>
-                          <th>Date</th>
-                          <th>Status</th>
-                          <th>Edit</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        @foreach( $datalist as $rs)
-                        <tr>
-                          <td>{{ $rs->id}}</td>
-                          <td>
-                          <a href="{{route('admin_user_show',['id'=> $rs->user->id])}}" onclick="return !window.open(this.href,'','top=50 width=1100,height=700')">
-                          {{$rs->user->name}}</a></td>
-                          <td>{{ $rs->name}}</td>
-                          <td>{{ $rs->phone}}</td>
-                          <td>{{ $rs->address}}</td>
-                          <td>${{ $rs->total}}</td>
-                          <td>{{ $rs->created_at}}</td>
-                          <td>{{ $rs->status}}</td>
-                          <td><a href="{{route('admin_order_show',['id'=>$rs->id])}}" onclick="return !window.open(this.href,'','top=50 width=1100,height=700')" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i>Edit</a></td>
+                  <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  
+                  <div class="x_content">
 
-                        </tr>
-                       @endforeach
-                      </tbody>
-                    </table>
+                    <form class="form-horizontal form-label-left" action="{{route('admin_user_update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
+                     @csrf
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12" >Name</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
+                          <input type="text" name="name" value="{{$data->name}}" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12" >Email</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
+                          <input type="text" name="email" value="{{$data->email}}" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Phone</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
+                          <input type="text" name="phone" value="{{$data->phone}}" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Address</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
+                          <input type="text" name="address" value="{{$data->address}}" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                          <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Image</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
+                          <input type="file" name="image" class="form-control col-md-7 col-xs-12">
+                            @if ($data->profile_photo_path)
+                          <img src="{{ Storage::url($data->profile_photo_path)}}" height="200" style="border-raidus:10px" alt="">
+                          @endif
+                        </div>
+                      </div>                      
+                     <div class="card-footer">
+                        <div class="col-md-6 col-md-offset-3">
+                          <button type="submit" class="btn btn-success">Update</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
                   </div>
                 </div>
               </div>
