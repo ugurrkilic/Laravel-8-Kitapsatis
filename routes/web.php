@@ -45,6 +45,10 @@ Route::get('/productlist{search}', [HomeController::class,'productlist'])->name(
 //Admin
 Route::middleware('auth')->prefix('admin')->group(function(){
 
+    #Admin Role
+    Route::middleware('admin')->group(function() {
+
+
     Route::get('/',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin_home');
 
     Route::get('category',[\App\Http\Controllers\Admin\CategoryController::class,'index'])->name('admin_category');
@@ -122,7 +126,7 @@ Route::middleware('auth')->prefix('admin')->group(function(){
         Route::get('show/{id}',[AdminOrderController::class,'show'])->name('admin_order_show');
 
     });
-
+   }); #admin
 });
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function(){
     
