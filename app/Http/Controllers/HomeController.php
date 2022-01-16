@@ -50,7 +50,7 @@ class HomeController extends Controller
         $slider = Product::select('id','title','image','price','slug')->limit(4)->get();
         $new = Product::select('id','title','image','price','slug')->limit(6)->inRandomOrder()->get();
         $all = Product::select('id','title','image','price','slug')->limit(8)->inRandomOrder()->get();
-        $best = Product::select('id','title','image','price','slug')->limit(8)->inRandomOrder()->get();
+        $best = Product::select('id','title','image','price','slug')->limit(9)->inRandomOrder()->get();
         $data= [
             'setting' => $setting,
             'slider' => $slider,

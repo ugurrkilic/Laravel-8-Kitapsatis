@@ -5,7 +5,7 @@
 @section('content')
 
 <!-- Start Bradcaump area -->
-<div class="ht__bradcaump__area bg-image--4">        
+<div class="ht__bradcaump__area bg-image--4" style="background-image:url('{{asset('assets')}}/images/main/resim2.png')">        
     <div class="container">        
         <div class="row">        
             <div class="col-lg-12">        
@@ -20,21 +20,20 @@
             </div>        
         </div>        
     </div>        
-</div>        
+</div>     
 <!-- End Bradcaump area -->        
 <div class="maincontent bg--white pt--80 pb--55">
         	<div class="container">
         		<div class="row">
-                
         			<div class="col-lg-11 col-12">
         				<div class="wn__single__product">
         					<div class="row">
         						<div class="col-lg-6 col-12">
         							<div class="wn__fotorama__wrapper">
-	        							<div class="fotorama wn__fotorama__action" data-nav="thumbs">
-		        							  <a href="1.jpg"><img src="{{ Storage::url($data->image) }}" style="height:350px" alt=""></a>
+	        							<div class="product__thumb">
+		        							  <a><img src="{{ Storage::url($data->image) }}" style="height:500px" alt="product image"></a>
                                               @foreach ($datalist as $rs)
-		        							  <a href="2.jpg"><img src="{{ Storage::url($rs->image) }}" style="height:50px" alt=""></a>
+		        							  <a><img src="{{ Storage::url($rs->image) }}" style="height:50px" alt="product image"></a>
                                               @endforeach
 	        							</div>
         							</div>
@@ -45,8 +44,20 @@
         								<div class="price-box">
         									<span>${{$data->price}}</span>
         								</div>
-										<div class="product__overview">
-        									<p>{{$data->description}}</p>
+										<div class="">
+        									<p><strong>Yazar:</strong>{{$data->yazar}}</p>
+        								</div>
+										<div class="">
+        									<p><strong>Yayınevi:</strong>{{$data->yayinevi}}</p>
+        								</div>
+										<div class="">
+        									<p><strong>Sayfa Sayısı:</strong>{{$data->sayfa}}</p>
+        								</div>
+										<div class="">
+        									<p><strong>ISBN:</strong>{{$data->isbn}}</p>
+        								</div>
+										<div class="">
+        									<p><strong>Kapak:</strong>{{$data->kapak}}</p>
         								</div>
 
 										<div>

@@ -21,11 +21,11 @@
 					<div class="product product__style--3">
 						<div class="col-lg-3 col-md-4 col-sm-6 col-12">
 							<div class="product__thumb">
-								<a class="first__img" href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug] )}}"><img src="{{ Storage::url($rs->image) }}" style="height:350px" alt="product image"></a>
-								<a class="second__img animation1" href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug] )}}"><img src="{{ Storage::url($rs->image) }}" style="height:350px" alt="product image"></a>
-								<div class="hot__box">
-									<span class="hot-label">BEST SALLER</span>
-								</div>
+								<a class="first__img" href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug] )}}"><img src="{{ Storage::url($rs->image) }}" style="height:400px" alt="product image"></a>
+								<a class="second__img animation1" href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug] )}}"><img src="{{ Storage::url($rs->image) }}" style="height:400px" alt="product image"></a>
+									<div class="hot__box">
+										<span class="hot-label">BEST SALER</span>
+									</div>
 							</div>
 							<div class="product__content content--center">
 								<h4><a href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug] )}}">{{$rs->title}}</a></h4>
@@ -75,7 +75,7 @@
 		</section>
 		<!-- Start BEst Seller Area -->
 		<!-- Start NEwsletter Area -->
-		<section class="wn__newsletter__area bg-image--2">
+		<section class="wn__newsletter__area bg-image--2" style="background-image:url('{{asset('assets')}}/images/main/resim2.png')">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-7 offset-lg-5 col-md-12 col-12 ptb--220">
@@ -106,8 +106,8 @@
 								<div class="col-lg-3 col-md-4 col-sm-6 col-12">
 									<div class="product product__style--3">
 										<div class="product__thumb">
-											<a class="first__img" href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug] )}}"><img src="{{ Storage::url($rs->image) }}" style="height:350px" alt="product image"></a>
-											<a class="second__img animation1" href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug] )}}"><img src="{{ Storage::url($rs->image) }}" style="height:350px" alt="product image"></a>
+											<a class="first__img" href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug] )}}"><img src="{{ Storage::url($rs->image) }}" style="height:400px" alt="product image"></a>
+											<a class="second__img animation1" href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug] )}}"><img src="{{ Storage::url($rs->image) }}" style="height:400px" alt="product image"></a>
 											<div class="hot__box">
 												<span class="hot-label">BEST SALER</span>
 											</div>
@@ -133,7 +133,7 @@
 												</div>
 											</div>
 											<div class="product__hover--content">
-									@php
+									        @php
 											$avgrev = \App\Http\Controllers\HomeController::avrgreview($rs->id);
 											$countreview = \App\Http\Controllers\HomeController::countreview($rs->id);
 											@endphp
@@ -148,7 +148,6 @@
 									<i>({{$countreview}})</i>
                                 </div>
 								</div>
-							
 											</div>
 										</div>
 									</div>	
@@ -163,14 +162,14 @@
 					<!-- Start Single Tab Content -->
 					<div class="row single__tab tab-pane fade show active" id="nav-all" role="tabpanel">
 						<div class="product__indicator--4 arrows_style owl-carousel owl-theme">
-						    @foreach ($new as $rs) 
+						    @foreach ($best as $rs) 
 							<div class="single__product">
 								<!-- Start Single Product -->
 								<div class="col-lg-3 col-md-4 col-sm-6 col-12">
 									<div class="product product__style--3">
 										<div class="product__thumb">
-											<a class="first__img" href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug] )}}"><img src="{{ Storage::url($rs->image) }}" style="height:350px" alt="product image"></a>
-											<a class="second__img animation1" href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug] )}}"><img src="{{ Storage::url($rs->image) }}" style="height:350px" alt="product image"></a>
+											<a class="first__img" href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug] )}}"><img src="{{ Storage::url($rs->image) }}" style="height:400px" alt="product image"></a>
+											<a class="second__img animation1" href="{{route('product',['id'=>$rs->id,'slug'=>$rs->slug] )}}"><img src="{{ Storage::url($rs->image) }}" style="height:400px" alt="product image"></a>
 											<div class="hot__box">
 												<span class="hot-label">BEST SALER</span>
 											</div>

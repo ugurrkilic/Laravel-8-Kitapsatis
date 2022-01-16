@@ -2,7 +2,7 @@
 @section('title','User Add Product')
 @section('content')
         <!-- Start Bradcaump area -->
-        <div class="ht__bradcaump__area bg-image--6">
+        <div class="ht__bradcaump__area bg-image--6" style="background-image:url('{{asset('assets')}}/images/main/resim2.png')">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -81,6 +81,36 @@
                         <label class="control-label col-md-1 col-sm-3 col-xs-12">Quantity</label>
                         <div class="col-md-11 col-sm-6 col-xs-12">
                           <input type="number" name="quantity" class="form-control col-md-12 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Yazar</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
+                          <input type="text" name="yazar" class="form-control col-md-12 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Yayınevi</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
+                          <input type="text" name="yayinevi" class="form-control col-md-12 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Sayfa Sayısı</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
+                          <input type="number" name="sayfa" class="form-control col-md-12 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">ISBN</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
+                          <input type="number" name="isbn" class="form-control col-md-12 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Kapak</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
+                          <input type="text" name="kapak" class="form-control col-md-12 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">

@@ -51,6 +51,11 @@ class ProductController extends Controller
         $data->user_id = Auth::id();
         $data->price = $request->input('price');
         $data->quantity = $request->input('quantity');
+        $data->yazar = $request->input('yazar');
+        $data->yayinevi = $request->input('yayinevi');
+        $data->sayfa = $request->input('sayfa');
+        $data->isbn = $request->input('isbn');
+        $data->kapak = $request->input('kapak');
         $data->detail = $request->input('detail');
         $data->slug = $request->input('slug');
         if($request->file('image')!=null)
@@ -104,6 +109,11 @@ class ProductController extends Controller
         $data->user_id = Auth::id();
         $data->price = $request->input('price');
         $data->quantity = $request->input('quantity');
+        $data->yazar = $request->input('yazar');
+        $data->yayinevi = $request->input('yayinevi');
+        $data->sayfa = $request->input('sayfa');
+        $data->isbn = $request->input('isbn');
+        $data->kapak = $request->input('kapak');
         $data->detail = $request->input('detail');
         $data->slug = $request->input('slug');
         if($request->file('image')!=null)

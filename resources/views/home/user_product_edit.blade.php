@@ -2,7 +2,7 @@
 @section('title','User Edit Product')
 @section('content')
         <!-- Start Bradcaump area -->
-        <div class="ht__bradcaump__area bg-image--6">
+        <div class="ht__bradcaump__area bg-image--6" style="background-image:url('{{asset('assets')}}/images/main/resim2.png')">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -57,31 +57,61 @@
                       <div class="item form-group">
                         <label class="control-label col-md-1 col-sm-3 col-xs-12" >Title</label>
                         <div class="col-md-11 col-sm-6 col-xs-12">
-                          <input type="text" name="title" value="{{$data->title}}" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="title" value="{{$data->title}}" class="form-control col-md-12 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-1 col-sm-3 col-xs-12" >Keywords</label>
                         <div class="col-md-11 col-sm-6 col-xs-12">
-                          <input type="text" name="keywords" value="{{$data->keywords}}" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="keywords" value="{{$data->keywords}}" class="form-control col-md-12 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-1 col-sm-3 col-xs-12">Description</label>
                         <div class="col-md-11 col-sm-6 col-xs-12">
-                          <input type="text" name="description" value="{{$data->description}}" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="description" value="{{$data->description}}" class="form-control col-md-12 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-1 col-sm-3 col-xs-12">Price</label>
                         <div class="col-md-11 col-sm-6 col-xs-12">
-                          <input type="number" name="price" value="{{$data->price}}" class="form-control col-md-7 col-xs-12">
+                          <input type="number" name="price" value="{{$data->price}}" class="form-control col-md-12 col-xs-12">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="control-label col-md-1 col-sm-3 col-xs-12">Quantity</label>
                         <div class="col-md-11 col-sm-6 col-xs-12">
-                          <input type="number" name="quantity" value="{{$data->quantity}}" class="form-control col-md-7 col-xs-12">
+                          <input type="number" name="quantity" value="{{$data->quantity}}" class="form-control col-md-12 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Yazar</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
+                          <input type="text" name="yazar" value="{{$data->yazar}}" class="form-control col-md-12 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Yayınevi</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
+                          <input type="text" name="yayinevi" value="{{$data->yayinevi}}" class="form-control col-md-12 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Sayfa Sayısı</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
+                          <input type="number" name="sayfa" value="{{$data->sayfa}}" class="form-control col-md-12 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">ISBN</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
+                          <input type="number" name="isbn" value="{{$data->isbn}}" class="form-control col-md-12 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-1 col-sm-3 col-xs-12">Kapak</label>
+                        <div class="col-md-11 col-sm-6 col-xs-12">
+                          <input type="text" name="kapak" value="{{$data->kapak}}" class="form-control col-md-12 col-xs-12">
                         </div>
                       </div>
                         <div class="item form-group">
@@ -97,13 +127,13 @@
                          <div class="item form-group">
                         <label class="control-label col-md-1 col-sm-3 col-xs-12">Slug</label>
                         <div class="col-md-11 col-sm-6 col-xs-12">
-                          <input type="text" name="slug" value="{{$data->slug}}" class="form-control col-md-7 col-xs-12">
+                          <input type="text" name="slug" value="{{$data->slug}}" class="form-control col-md-12 col-xs-12">
                         </div>
                       </div>
                           <div class="item form-group">
                         <label class="control-label col-md-1 col-sm-3 col-xs-12">Image</label>
                         <div class="col-md-11 col-sm-6 col-xs-12">
-                          <input type="file" name="image" class="form-control col-md-7 col-xs-12">
+                          <input type="file" name="image" class="form-control col-md-12 col-xs-12">
                                 @if ($data->image) 
                           <img src="{{ Storage::url($data->image)}}" height="60" alt="">
                           @endif

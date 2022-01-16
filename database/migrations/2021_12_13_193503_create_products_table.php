@@ -25,6 +25,11 @@ class CreateProductsTable extends Migration
             $table->integer('quantity')->default(1);
             $table->text('detail')->nullable();
             $table->text('slug')->nullable();
+            $table->string('yazar')->nullable();
+            $table->string('yayinevi')->nullable();
+            $table->integer('sayfa')->nullable();
+            $table->integer('isbn')->nullable();
+            $table->string('kapak')->nullable();
             $table->string('status',5)->nullable()->default('False');
             $table->timestamps();
         });
