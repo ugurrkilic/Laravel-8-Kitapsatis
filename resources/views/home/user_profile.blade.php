@@ -36,6 +36,7 @@
 									<li><a href="{{route('myreviews')}}">My Reviews</a></li>
 									<li><a href="{{route('user_shopcart')}}">My Shopcart</a></li>
 									<li><a href="{{route('user_products')}}">My Product</a></li>
+                                    <li><a href="{{route('user_orders')}}">My Order</a></li>
                                     @if($userRoles->contains('admin'))
                                     <li><a href="{{route('admin_home')}}" target="_blank">Admin Panel</a></li>
                                     @endif

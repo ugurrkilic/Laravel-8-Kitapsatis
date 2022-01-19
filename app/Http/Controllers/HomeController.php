@@ -36,7 +36,7 @@ class HomeController extends Controller
 
     public static function countreview($id)
     {
-        return Review::where('product_id', $id)->count();
+        return Review::where('product_id', $id)->where('status','True')->count();
     }
 
     public static function avrgreview($id)
@@ -47,10 +47,10 @@ class HomeController extends Controller
     public function index()
     {
         $setting = Setting::first();
-        $slider = Product::select('id','title','image','price','slug')->limit(4)->get();
-        $new = Product::select('id','title','image','price','slug')->limit(6)->inRandomOrder()->get();
-        $all = Product::select('id','title','image','price','slug')->limit(8)->inRandomOrder()->get();
-        $best = Product::select('id','title','image','price','slug')->limit(9)->inRandomOrder()->get();
+        $slider = Product::select('id','title','image','price','slug')->where('status','=','True')->limit(4)->get();
+        $new = Product::select('id','title','image','price','slug')->where('status','=','True')->limit(6)->inRandomOrder()->get();
+        $all = Product::select('id','title','image','price','slug')->where('status','=','True')->limit(8)->inRandomOrder()->get();
+        $best = Product::select('id','title','image','price','slug')->where('status','=','True')->limit(9)->inRandomOrder()->get();
         $data= [
             'setting' => $setting,
             'slider' => $slider,
@@ -67,7 +67,7 @@ class HomeController extends Controller
     {
         $data = Product::find($id);
         $datalist = Image::where('product_id',$id)->get();
-        $reviews = Review::where('product_id',$id)->get();
+        $reviews = Review::where('product_id',$id)->where('status','True')->get();
 
         return view('home.product_detail',['data'=> $data,'datalist'=> $datalist,'reviews'=> $reviews]); 
     }
@@ -103,7 +103,7 @@ class HomeController extends Controller
 
     public function categoryproducts($id,$slug)
     {
-        $datalist = Product::where('category_id',$id)->get();
+        $datalist = Product::where('category_id', $id)->where('status','=','True')->get();
         $data = Category::find($id);
         return view('home.category_products',['data'=> $data, 'datalist'=> $datalist]); 
 

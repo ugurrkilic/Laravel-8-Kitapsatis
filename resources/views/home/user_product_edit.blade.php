@@ -138,19 +138,7 @@
                           <img src="{{ Storage::url($data->image)}}" height="60" alt="">
                           @endif
                         </div>
-                      </div>
-                      <div class="item form-group">
-                      <label class="control-label col-md-1 col-sm-3 col-xs-12" >Status
-                        </label>  
-                      <div class="col-md-11 col-sm-6 col-xs-12" >
-                          <select class="form-control" name="status" value="{{$data->status}}">
-                            <option>True</option>
-                            <option>False</option>
-                          </select>
-                        </div>
-                      </div>
-                      
-                      
+                      </div> 
                         <div class="col-md-6 col-md-offset-3">
                           <button type="submit" class="btn btn-success">Update Product</button>
                         </div>

@@ -48,15 +48,10 @@
               </div>
             </div>
             <div class="clearfix"></div>
-
             <div class="row">
             @include('home.message')
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                
-                <div style="float:right;margin-top: 0px;">
-                    <a href="{{route('admin_product_add')}}" class="btn btn btn-primary">Add Category</a>
-                    </div>
+                <div class="x_panel">         
                   <div class="x_content">
                   <div class="x_panel">
                   <div class="x_content">

@@ -135,16 +135,6 @@
                           <input type="file" name="image" class="form-control col-md-12 col-xs-12">
                         </div>
                       </div>
-                      <div class="item form-group">
-                      <label class="control-label col-md-1 col-sm-3 col-xs-12" >Status
-                        </label>  
-                      <div class="col-md-11 col-sm-6 col-xs-12" >
-                          <select class="form-control" name="status">
-                            <option>True</option>
-                            <option>False</option>
-                          </select>
-                        </div>
-                      </div>
                       <div class="col-md-6 col-md-offset-3">
                           <button type="submit" class="btn btn-success">Add Product</button>
                         </div>
